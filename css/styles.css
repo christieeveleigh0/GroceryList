@@ -1,0 +1,302 @@
+
+@font-face {
+    font-family: Poppins;
+    src: url(font/Poppins-Light.woff2);
+    font-weight: light;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(font/Poppins-Regular.woff2);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(font/Poppins-Medium.woff2);
+    font-weight: bold;
+}
+
+:root {
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+    font-weight: lighter;
+    --border-color: #d0d4e4;
+    --success: #daf8ed;
+    --success-text: #3dc795;
+}
+
+body {
+    margin: 0;
+}
+
+i {
+    color: var(--border-color);
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+i:hover {
+    color: #ea3738;
+    animation: shakeIt 0.5s infinite;
+}
+
+.welcome-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.39);
+    z-index: 99;
+    box-shadow: 0 3px 4px 0 rgb(0 0 0 / 20%);
+}
+
+.welcome-container-inner {
+    background: white;
+    height: fit-content;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    border-radius: 5px;
+}
+
+.welcome-description {
+    text-align: center;
+    width: 80% !important;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: var(--success-text);
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: 0;
+    padding: 10px 19px;
+    border-radius: 5px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    margin-top: 15px;
+}
+
+.navigation div {
+    background-color: var(--border-color);
+    height: 8px;
+    width: 8px !important;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.selected {
+    background-color: var(--success-text) !important;
+}
+
+.welcome-container-inner div, .welcome-container-inner img {
+    width: inherit;
+}
+
+#onboarding-container, #onboarding-1, #onboarding-2, #onboarding-3 {
+    display: none;
+}
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 4px 0 rgb(0 0 0 / 20%);
+    padding: 20px;
+}
+
+.page-heading div {
+    display: flex;
+    align-items: center;
+}
+
+.page-heading p {
+    font-size: 12px;
+}
+
+.logo {
+    width: 190px;
+}
+
+table, th, td {
+    /* border: 1px solid var(--border-color); */
+    border-collapse: collapse;
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+td {
+    padding: 7px 0;
+}
+
+tr {
+    text-align: left;
+}
+
+.add-new-container input {
+    width: 95%;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.table-container div, table {
+    width: 50%;
+}
+
+.complete {
+    text-decoration: line-through;
+}
+
+input[type="text"] {
+    border: 0;
+    font-size: 15px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-bottom: 1px solid black
+}
+
+.add-item {
+    margin-bottom: 20px;
+}
+
+.checkbox-td-container {
+    width: 1%;
+}
+
+/* Custom checkmark adapted from W3Schools: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox */
+.checkbox-container {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    background-color: var(--border-color);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--success);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+.checkbox-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--success-text);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.fade-out {
+    animation-name: fadeOut;
+    animation-duration: 0.7s;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 0.7s;
+}
+
+@keyframes fade {
+    from {
+       opacity: .4
+   }
+    to {
+       opacity: 1
+   }
+}
+
+@keyframes fadeOut {
+    from {
+       opacity: 1
+   }
+    to {
+       opacity: 0
+   }
+}
+
+@keyframes shakeIt {
+    0% {transform: rotate(0deg);}
+    20% {transform: rotate(-4deg);}
+    50% {transform: rotate(0deg);}
+    70% {transform: rotate(4deg);}
+    100% {transform: rotate(0deg);}
+}
+
+/* Responsive */
+@media screen and (max-width: 1280px) {
+    .table-container div, table {
+        width: 80%;
+    }
+
+    .add-new-container input {
+        width: 92%;
+    }
+}
+
+@media screen and (min-width: 361px) and (max-width: 600px) {
+    .welcome-container-inner {
+        width: 360px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .welcome-container-inner {
+        width: 330px;
+    }
+}
